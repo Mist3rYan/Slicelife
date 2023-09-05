@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "69037103929",
+    "project_id": "slicelife-9a20b",
+    "storage_bucket": "slicelife-9a20b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:69037103929:android:c87885869d4f52140be6e8",
+        "android_client_info": {
+          "package_name": "com.mycodeapps.slicelife"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "69037103929-cj4np0codnhtfr2a6cgdpmorh11k5q0a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycodeapps.slicelife",
+            "certificate_hash": "393a1826e1c50ff27ccd8ce1132b49b21c5313ba"
+          }
+        },
+        {
+          "client_id": "69037103929-rt96718digetcm0ga00n20jjcdni38ap.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB11YGAwtdtNZ_806SX9ZvzGxOgEJHCTLo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "69037103929-rt96718digetcm0ga00n20jjcdni38ap.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
