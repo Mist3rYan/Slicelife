@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:slicelife/models/user_model.dart';
+import 'package:slicelife/screens/dashboard/home.dart';
+import 'package:slicelife/services/user_service.dart';
 
 import 'guest/auth.dart';
 import 'guest/password.dart';
@@ -12,21 +15,42 @@ class GuestScreen extends StatefulWidget {
 }
 
 class _GuestScreenState extends State<GuestScreen> {
+  final UserService _userService = UserService();
+
   final List<Widget> _widgets = [];
   int _indexSelected = 0;
+
+  // ignore: unused_field
+  String _email = '';
 
   @override
   void initState() {
     super.initState();
     _widgets.addAll([
       AuthScreen(
-        onChangedStep: (index) => setState(() => _indexSelected = index),
+        onChangedStep: (index, value) => setState(() {
+          _indexSelected = index;
+          _email = value;
+        }),
       ),
       TermScreen(
         onChangedStep: (index) => setState(() => _indexSelected = index),
       ),
       PasswordScreen(
-        onChangedStep: (index) => setState(() => _indexSelected = index),
+        onChangedStep: (index, value) => setState(() {
+          if (index == 0) {
+            _indexSelected = index;
+          }
+          if (value != '') {
+            _userService
+                .auth(UserModel(email: _email, password: value, uid: ''))
+                .then((value){
+                  if(value.uid != ''){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen(),),);
+                  }
+                });
+          }
+        }),
       ),
     ]);
   }
