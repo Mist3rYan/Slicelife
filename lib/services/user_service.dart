@@ -25,6 +25,7 @@ class UserService {
     userModel.uid = userCredential.user!.uid;
     return userModel;
   }
+
   Future<void> signOut() async {
     await _auth.signOut();
   }
