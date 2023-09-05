@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class PasswordScreen extends StatefulWidget {
-  final Function(int) onChangedStep;
+  final Function(int, String) onChangedStep;
   const PasswordScreen({Key? key, required this.onChangedStep})
       : super(key: key);
 
@@ -23,7 +23,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         elevation: 0.0,
         leading: IconButton(
-          onPressed: () => widget.onChangedStep(0),
+          onPressed: () => widget.onChangedStep(0,''),
           icon: const Icon(Icons.arrow_back),
           color: Colors.black,
         ),
@@ -91,7 +91,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
                               ? null
                               : () {
                                   if (_formKey.currentState!.validate()) {
-                                    print('password : $_password');
+                                    widget.onChangedStep(2, _password);
                                   }
                                 },
                           child: const Text('Continuer'),
